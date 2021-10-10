@@ -1,7 +1,18 @@
+
+
+
+import java.util.Calendar;
+import java.util.Date;
+
+
 public class Main {
     public static void main(String[] args) {
-        String greeting = "Welcome to my Java program.";
-        System.out.println(greeting);
+
+
+
+		Main object = new Main();
+
+    
 
         System.out.println("Function 1 /////////////////////////////////////////////////");
 
@@ -17,6 +28,12 @@ public class Main {
         System.out.println("Function 2 /////////////////////////////////////////////////");
 
         flipNHeads(1);
+
+        System.out.println("Function 3 /////////////////////////////////////////////////");
+
+        
+        object.clock();
+        
 
     }
 
@@ -46,5 +63,30 @@ public class Main {
         System.out.println("It took " + numFlips + " flips to flip " + n + " heads in a row.");
 
     }
+
+   
+
+
+    public synchronized  void clock() {
+ 
+        // LocalDateTime now = LocalDateTime.now();
+        
+      
+
+        // String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+		while (true) {
+			System.out.println( Calendar.getInstance().getTime());
+			try {
+				this.wait(999);
+			} catch (InterruptedException e) {
+ 
+				e.printStackTrace();
+			}
+		}
+ 
+	}
+
+
+
 
 }
