@@ -26,3 +26,21 @@ files/methods:
 * containsDuplicates :  that accepts an array and check if there any rerpated elements.
 * calculatingAverages : return an array avearge.
 * calculatingAveragesOfMultipleArrays :  return a multipe arrays avgs and identfy the lowest one.
+
+
+## lab03 
+
+Lab 01 : estimated time 3 hours // actual time spent 6 hours
+
+files/methods: 
+
+1. Library : includes the whole code that contains the main function, calling 4 methods for each feature
+
+* getMax : return the max item of the 2d array. 
+* getMin :  return the min item of the 2d array.
+* tally : return the most repeted element.
+
+
+2. Linter :  an app that generates an error message whenever it finds a line that doesn’t end in a semi-colon.
+
+* linetr function used regex to place the lines that do not end with :
