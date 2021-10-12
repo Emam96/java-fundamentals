@@ -3,12 +3,16 @@
  */
 package basiclibrary;
 
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.BooleanSupplier;
 
-public class Main {
+
+public class Library {
+
+
     public static void main(String[] args) {
 
         roll(5);
@@ -42,10 +46,10 @@ public class Main {
         for (int i = 0; i < n; i++) {
 
             newArr[i] = (int) Math.floor(Math.random() * (6 - 1 + 1) + 1); // this for loop generates a random number
-                                                                           // between 1 and 6 to simulate the dice roll.
+            // between 1 and 6 to simulate the dice roll.
         }
 
-         System.out.println(Arrays.toString(newArr)); // we import the Arrays package to stringify the array print out.
+        System.out.println(Arrays.toString(newArr)); // we import the Arrays package to stringify the array print out.
 
     }
 
@@ -55,7 +59,7 @@ public class Main {
         for (int i : a) {
             if (arr.contains(i))
                 return true; // a for loop that will iterate the array looking for any identical elements
-                             // inside.
+            // inside.
             arr.add(i);
         }
         return false;
@@ -100,5 +104,4 @@ public class Main {
     public BooleanSupplier someLibraryMethod() {
         return null;
     }
-
 }
