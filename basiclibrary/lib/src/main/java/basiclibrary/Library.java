@@ -7,7 +7,6 @@ package basiclibrary;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.BooleanSupplier;
 
 
 public class Library {
@@ -20,6 +19,7 @@ public class Library {
         int[] sampleOne = { 1, 2, 1, 3, 5, 6, 8, 6, 4 };
         int[] sampleTwo = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         int[] sampleThree = { 1, 2, 3 };
+        int[] sampleFour = {65, 56, 55, 52, 55, 62, 57};
 
         System.out.println("///////////////////////////////////////////");
 
@@ -29,6 +29,7 @@ public class Library {
         System.out.println("///////////////////////////////////////////");
 
         System.out.println("the avg is =" + calculatingAverages(sampleThree));
+        System.out.println("the avg is =" + calculatingAverages(sampleFour));
 
         System.out.println("///////////////////////////////////////////");
 
@@ -39,7 +40,7 @@ public class Library {
 
     }
 
-    public static void roll(int n) {
+    public static int[] roll(int n) {
 
         int newArr[] = new int[n]; // we declare an array with the length of n.
 
@@ -51,6 +52,7 @@ public class Library {
 
         System.out.println(Arrays.toString(newArr)); // we import the Arrays package to stringify the array print out.
 
+        return newArr;
     }
 
     public static boolean containsDuplicates(int a[]) {
@@ -72,7 +74,7 @@ public class Library {
 
     }
 
-    public static void calculatingAveragesOfMultipleArrays(int[][] a) {
+    public static int[] calculatingAveragesOfMultipleArrays(int[][] a) {
         int sum = 0;
 
         double[] arr = new double[4];
@@ -99,9 +101,8 @@ public class Library {
         }
         System.out.println("Smallest element present in given array: " + min);
 
+        return new int[0];
     }
 
-    public BooleanSupplier someLibraryMethod() {
-        return null;
-    }
+
 }
