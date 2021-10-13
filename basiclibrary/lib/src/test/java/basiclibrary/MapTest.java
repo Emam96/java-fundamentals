@@ -2,14 +2,17 @@ package basiclibrary;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class MapTest {
 
 
     @Test
-    public void testMax() {
+    public void testData() {
 
         int[][] arr = {
                 {1,2,4,4},
@@ -18,25 +21,15 @@ public class MapTest {
                 {2,8,9,7}
         };
 
-        int passedValue = Maps.getMaxValue(arr);
-        assertEquals( 10, passedValue);
+
+
+        ArrayList<Integer> passedValue = Maps.checkForData(arr);
+        System.out.println(passedValue);
+        assertEquals( 1, passedValue.size());
 
     }
 
-    @Test
-    public void testMin() {
 
-        int[][] arr = {
-                {1,2,4,4},
-                {5,4,8,6},
-                {10,8,9,6},
-                {2,8,9,7}
-        };
-
-        int passedValue = Maps.getMinValue(arr);
-        assertEquals( 1, passedValue);
-
-    }
 
 
 

@@ -14,9 +14,8 @@ public class Maps {
                 {65, 56, 55, 52, 55, 62, 57}
         };
 
-        System.out.println("High:" + getMaxValue(weeklyMonthTemperatures));
-        System.out.println("Low:" + getMinValue(weeklyMonthTemperatures));
 
+        checkForData(weeklyMonthTemperatures);
 
         List<String> votes = new ArrayList<>();
         votes.add("Bush");
@@ -39,52 +38,40 @@ public class Maps {
 
     }
 
-    public static int getMaxValue(int[][] numbers) {
-        int maxValue = numbers[0][0];
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] > maxValue) {
-                    maxValue = numbers[j][i];
-                }
+
+
+    public static ArrayList<Integer> checkForData(int[][] data) {
+
+
+        ArrayList<Integer> missing = new ArrayList<>();
+        Set<Integer> hashSet = new HashSet<Integer>();
+
+
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                hashSet.add(data[i][j]);
             }
         }
-        return maxValue;
-    }
 
-    public static int getMinValue(int[][] numbers) {
-        int minValue = numbers[0][0];
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] < minValue) {
-                    minValue = numbers[j][i];
-                }
+        int max = Collections.max(hashSet);
+
+        int min = Collections.min(hashSet);
+
+        System.out.println("High: " + max);
+
+        System.out.println("Low: " + min);
+
+        for (int i = min; i < max; i++) {
+            if (!hashSet.contains(i)) {
+                missing.add(i);
+                System.out.println("Never saw temperature: " + i);
             }
         }
-        return minValue;
-    }
 
-//    public static String notSeen(int[][] numbers, int max, int min) {
-//        String unseen = new ArrayList<>();
-//
-//
-//            for (int j = 0; j < numbers.length; j++) {
-//                for (int i = 0; i < numbers[j].length; i++) {
-//                    if (unseen.contains(i)) {
-//
-//                        unseenTemp = unseenTemp + "Never saw temperature: " + i + "\n";
-//
-//                    }
-//                }
-//            }
-//
-//
-//
-//
-//        System.out.println("High: " + min);
-//        System.out.println("low: " + max);
-//
-//        return unseenTemp;
-//    }
+
+
+        return missing;
+    }
 
 
 
