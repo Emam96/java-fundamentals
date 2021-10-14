@@ -17,14 +17,17 @@ public class App {
 
     public static void main(String[] args) {
 
-        linter("C:\\Users\\STUDENT\\Desktop\\401\\java-fundamentals\\linter\\app\\src\\main\\resources\\gates.js");
+        System.out.println(linter("src/main/resources/gates.js"));
 
 
     }
 
-    public static void linter(String path) {
-
+    public static String linter(String path) {
+String result = "";
         Path thePath = Paths.get(path);
+
+
+
         try {
             BufferedReader reader = Files.newBufferedReader(thePath);
             String line = reader.readLine();
@@ -35,19 +38,21 @@ public class App {
                         !line.contains("{") &&
                         !line.isEmpty() &&
                         !line.contains("if") &&
-                        !line.contains("else") ) {
-                    System.out.println("Line " + NumberOfLine + " is Missing a semicolon.");
+                        !line.contains("else")) {
+
+                    result = result + "Line" + NumberOfLine + ": Missing semicolon.\n";;
+
                 }
+
                 line = reader.readLine();
                 NumberOfLine++;
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+                  return result;
 
     }
-
-
 
 }

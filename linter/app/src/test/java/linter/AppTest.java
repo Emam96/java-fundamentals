@@ -15,20 +15,26 @@ class AppTest {
     @Test
     public void testLinter() {
 
-         App.linter("C:\\Users\\STUDENT\\Desktop\\401\\java-fundamentals\\linter\\app\\src\\main\\resources\\noErrors.js");
-        assertTrue( true);
+      String re = App.linter("src/main/resources/noErrors.js");
+      System.out.println(re);
+        assertEquals( "", re);
 
-        App.linter("C:\\Users\\STUDENT\\Desktop\\401\\java-fundamentals\\linter\\app\\src\\main\\resources\\oneError.js");
-        assertTrue( true);
+        String result2 = App.linter("src/main/resources/oneError.js");
+//        System.out.println(result2);
+        String re2 = "Line5: Missing semicolon.\n";
+        assertEquals(re2 , result2);
 
 
-        App.linter("C:\\Users\\STUDENT\\Desktop\\401\\java-fundamentals\\linter\\app\\src\\main\\resources\\few.js");
-        assertTrue( true);
+        String result3 = App.linter("src/main/resources/few.js");
+//        System.out.println(result3);
+        String re3 = "Line3: Missing semicolon.\n" +
+                "Line5: Missing semicolon.\n";
+        assertEquals(re3 , result3);
 
-        App.linter("C:\\Users\\STUDENT\\Desktop\\401\\java-fundamentals\\linter\\app\\src\\main\\resources\\empty.js");
-        assertTrue( true);
+        String re4 = App.linter("src/main/resources/empty.js");
+        System.out.println(re);
+        assertEquals( "", re4);
 
     }
-
 
 }
