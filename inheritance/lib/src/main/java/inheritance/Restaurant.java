@@ -26,8 +26,9 @@ public class Restaurant {
     public double addReview(String body,String author,int numOfStars) {
         Review review = new Review(body,author,numOfStars);
         reviewList.add(review);
-        this.sumOfStars =(this.sumOfStars+review.numOfStars)/2;
-//        System.out.println(review.test());
+        double sum = this.sumOfStars+review.numOfStars;
+        this.sumOfStars =(sum/reviewList.size());
+
         return this.sumOfStars;
 
     }

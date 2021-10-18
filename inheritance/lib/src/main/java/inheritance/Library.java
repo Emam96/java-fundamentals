@@ -13,7 +13,7 @@ public class Library {
         System.out.println(kfc.toString());
         kfc.addReview("good service","stue",2);
         System.out.println(kfc.toString());
-        System.out.println();
+
 
     }
 }
