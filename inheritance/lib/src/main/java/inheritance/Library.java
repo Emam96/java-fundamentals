@@ -3,17 +3,30 @@
  */
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Library {
     public static void main(String[] args) {
         Restaurant kfc = new Restaurant("KFC",5,"middle");
-        Review note = new Review("very good","mark hamil",5);
-        System.out.println(note.toString());
-
-
         System.out.println(kfc.toString());
         kfc.addReview("good service","stue",2);
         System.out.println(kfc.toString());
+        kfc.addReview("good service","stue",5);
+        System.out.println(kfc.toString());
 
+        Shop zara = new Shop("Zara",4,"high");
+        System.out.println(zara.toString());
+        zara.addReview("nice clothes", "emam", 5);
+        System.out.println(zara.toString());
 
+        ArrayList<String> passingThis =  new ArrayList<>();
+        Theater cima = new Theater("Cima", 3,"mid",passingThis);
+        cima.addMovie("robocop");
+        cima.addMovie("cars3");
+        cima.addReview("cool movie!", "emam", 5);
+        System.out.println(cima.toString());
+         cima.removeMovie("robocop");
+
+        System.out.println(cima.toString());
     }
 }

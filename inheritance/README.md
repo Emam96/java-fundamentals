@@ -5,7 +5,8 @@
 * library.java : the driver file and is used to run the functions from Restaurant.java. 
 * Restaurant.java : the class that we Inherit from it. 
 * Review.java : a class that it used to Inherit sub classed for the "addReview" function. 
-
+* Shop.java : for shops and places that are not restaurants.
+* Theater.java : for Theater.
 
 ## Testing 
 

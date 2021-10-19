@@ -4,6 +4,9 @@
 package inheritance;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -50,6 +53,50 @@ class LibraryTest {
                 " price category: low$",note);
 
     }
+
+
+    @Test void testShop(){
+        Shop place = new Shop("H&M",3,"mid");
+
+
+        place.addReview("good","emam",4);
+        String note = place.toString();
+        System.out.println(note);
+
+        assertEquals("Shop: H&M \n" +
+                " rating : 7.0 Number of reviews = 1 \n" +
+                " price category: mid$",note);
+    }
+
+    @Test void testTheater(){
+
+        ArrayList<String> passingThis =  new ArrayList<>();
+        Theater place = new Theater("downtown cinema", 3,"mid",passingThis);
+        place.addMovie("movie1");
+        place.addMovie("movie2");
+
+        place.addReview("good","emam",4);
+        String note = place.toString();
+        System.out.println(note);
+
+        assertEquals("Theater: downtown cinema \n" +
+                " rating : 7.0 Number of reviews = 1 \n" +
+                " price category: mid$ \n" +
+                "Showing Know:  [movie1, movie2]",note);
+
+
+        place.removeMovie("movie2");
+        String note2 = place.toString();
+        System.out.println(note2);
+
+        assertEquals("Theater: downtown cinema \n" +
+                " rating : 7.0 Number of reviews = 1 \n" +
+                " price category: mid$ \n" +
+                "Showing Know:  [movie1]",note2);
+
+    }
+
+
 
 
 }
